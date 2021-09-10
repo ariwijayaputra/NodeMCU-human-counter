@@ -20,7 +20,7 @@ Name				 				  | Amount  | Detail
 NodeMCU Amica esp8266        | x2		|
 LCD 16x2                     | x1      |(for indoor h/w only, but indoor & outdoor lcd is recommended)
 LCD 16x2 I2C Module          | x1      |(amount depends on the lcd)
-PIR sensor                   | x1		|
+PIR sensor                   | x2		|
 Cabel Jumper                 | depends |
 
 # Schematic
