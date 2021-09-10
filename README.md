@@ -26,11 +26,17 @@ PIR sensor                   | x1			 |
 Cabel Jumper                 | depends |
 
 #Folder Structure
-*	Credentials.h ==> your MQTT and WIFi personal data to connect to. `PLEASE UPDATE ACCORDINGLY` before uploading sketch
-* MQTTConnector.cpp ==> file to connect to MQTT. act as data handler between MQTT and `.ino` file
-* MQTTConnector.h ==> header file to connect to MQTT. contains function declaration for data handler
-* Readme.md ==> this file
-* lcd.ino ==> lcd related code. Setting up lcd.
-* maqiatto.ino ==> main code to this program. contains loop and setup for NodeMCU.
-* pir.ino ==> PIR sensor related code. contains function to read data from environment. change `MQTTPublish(Topic, "1")` to `MQTTPublish(Topic, "2")` if you wish to upload code for `outdoor` NodeMCU so that we can determine the sensor data source.
+- maqiatto ==> folder for hardware code
+    *	Credentials.h ==> your MQTT and WIFi personal data to connect to. `PLEASE EDIT BEFORE UPLOADING CODE`
+    * MQTTConnector.cpp ==> file to connect to MQTT. act as data handler between MQTT and `.ino` file
+    * MQTTConnector.h ==> header file to connect to MQTT. contains function declaration for data handler
+    * Readme.md ==> this file
+    * lcd.ino ==> lcd related code. Setting up lcd.
+    * maqiatto.ino ==> main code to this program. contains loop and setup for NodeMCU.
+    * pir.ino ==> PIR sensor related code. contains function to read data from environment. change `MQTTPublish(Topic, "1")` to `MQTTPublish(Topic, "2")` if you wish to upload code for `outdoor` NodeMCU so that we can determine the sensor data source.
+- web
+   * index.html ==> main view for monitoring data
+   - js
+     * websocket.js ==> data handler from mqtt broker
+     * config.js ==> credential to mqtt broker. `PLEASE EDIT BEFORE TESTING`
  
