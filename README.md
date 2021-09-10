@@ -37,6 +37,6 @@ Cabel Jumper                 | depends |
 - web
    * index.html ==> main view for monitoring data
    - js
-     * websocket.js ==> data handler from mqtt broker
+     * websockets.js ==> data handler from mqtt broker
      * config.js ==> credential to mqtt broker. `PLEASE EDIT BEFORE TESTING`
  
