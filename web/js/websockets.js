@@ -68,7 +68,7 @@ $( document ).ready(function() {
 		var topic = message.destinationName;
 		var payload = message.payloadString;
 		
-    if(topic == "aryanathaaa@gmail.com/status"){
+    if(topic == STATUS){
       if (payload == '1') {
         $("#state").html("masuk");     
         indoor = 1;
