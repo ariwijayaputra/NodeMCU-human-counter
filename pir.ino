@@ -2,7 +2,11 @@ void pir() {
   sensorValue = digitalRead(pirSensor);
   if (sensorValue == HIGH)
   {
-    //publish: 1 = indoor sensor detecting, 2 = outdoor sensor detecting motion,     
+    /*
+    CHANGE `MQTTPublish(TOPIC, "1");` to  `MQTTPublish(TOPIC, "2");` if you working
+    with outdoor nodeMCU
+    publish: 1 = indoor sensor detecting, 2 = outdoor sensor detecting motion
+    */     
     MQTTPublish(TOPIC, "1");
     Serial.println("motion detected");
     
