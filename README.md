@@ -25,7 +25,7 @@ LCD 16x2 I2C Module          | x1      |(amount depends on the lcd)
 PIR sensor                   | x1			 |
 Cabel Jumper                 | depends |
 
-#Folder Structure
+# Folder Structure
 - maqiatto ==> folder for hardware code
     *	Credentials.h ==> your MQTT and WIFi personal data to connect to. `PLEASE EDIT BEFORE UPLOADING CODE`
     * MQTTConnector.cpp ==> file to connect to MQTT. act as data handler between MQTT and `.ino` file
@@ -39,4 +39,12 @@ Cabel Jumper                 | depends |
    - js
      * websockets.js ==> data handler from mqtt broker
      * config.js ==> credential to mqtt broker. `PLEASE EDIT BEFORE TESTING`
+
+# Langkah Langkah
+1.  Rangkai komponen sesuai dengan skematik
+2.  Sesuaikan `Credential.h` agar sesuai dengan data pada broker MQTT
+3.  Sesuaikan `MQTTPublish` pada `pir.ino` agar sesuai dengan hardware. publish 1 untuk hardware indoor dan publish 2 untuk hardware outdoor
+4.  Upload file pada folder maqiatto ke nodemcu
+5.  sesuaikan data pada file web/js/config.js agar sesuai dengan data pada broker MQTT
+6.  jalankan file web/index.html untuk menguji.
  
