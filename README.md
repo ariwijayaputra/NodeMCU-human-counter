@@ -1,6 +1,6 @@
 # NodeMCU-human-counter
 
-#Description
+# Description
 
 `id`
 Program untuk menghitung jumlah orang di dalam ruangan dan
@@ -15,7 +15,7 @@ the data to WEB using MQTT protocol (http://maqiatto.com).
 works by counting people coming and leaving the room 
 via the PIR sensor on the exterior door and the inner door
 
-#Material
+# Material
 
 Name				 				  | Amount  | Detail
 ---------------------------- | ------- | ------
