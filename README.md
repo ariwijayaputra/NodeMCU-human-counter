@@ -1,5 +1,3 @@
-# NodeMCU-human-counter
-
 # Description
 
 `id`
