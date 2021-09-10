@@ -31,29 +31,6 @@ void dataCallback(char* topic, byte* payload, unsigned int length)
       outdoor = 1;
       datapayload = 2;
     }
-    
-    //current = atoi(payloadStr);
-    
-    
-//    if (timer > 3000) {
-//      indoor = 0;
-//      outdoor = 0;
-//      Serial.println("timeout");
-//    }
-//    
-//    if (indoor == 1 && outdoor == 1) {
-//      //timeout = 0;
-//      if (last == 2 && current == 1) {
-//        stat = 1; //masuk
-//        Serial.println("Masuk");
-//      }
-//      else if (last == 1 && current == 2) {
-//        stat = 2; // keluar
-//        Serial.println("Keluar");
-//      }
-//
-//      last = current;
-//    }
   }
 }
 
