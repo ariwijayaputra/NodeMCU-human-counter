@@ -49,11 +49,19 @@ D2      | SDA     |      |
      * websockets.js ==> data handler from mqtt broker
      * config.js ==> credential to mqtt broker. `PLEASE EDIT BEFORE TESTING`
 
-# Langkah Langkah
+# Panduan instalasi
 1.  Rangkai komponen sesuai dengan skematik
 2.  Sesuaikan `Credential.h` agar sesuai dengan data pada broker MQTT
 3.  Sesuaikan `MQTTPublish` pada `pir.ino` agar sesuai dengan hardware. publish 1 untuk hardware indoor dan publish 2 untuk hardware outdoor
 4.  Upload file pada folder maqiatto ke nodemcu
 5.  sesuaikan data pada file web/js/config.js agar sesuai dengan data pada broker MQTT
 6.  jalankan file web/index.html untuk menguji.
+
+# Installation Guide
+1. Assemble the components according to the schematic
+2. Adjust Credential.h to match the data on the MQTT broker
+3. Adjust MQTTPublish on pir.ino to match the hardware. publish 1 for indoor hardware and publish 2 for outdoor hardware
+4. Upload files in the maqiatto folder to nodemcu
+5. adjust the data in the web/js/config.js file to match the data in the MQTT broker
+6. run the web/index.html file to test.
  
