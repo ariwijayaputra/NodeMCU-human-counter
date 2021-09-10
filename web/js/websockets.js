@@ -71,12 +71,10 @@ $( document ).ready(function() {
     if(topic == STATUS){
       if (payload == '1') {
         $("#state").html("masuk");     
-        indoor = 1;
         console.log('orang masuk');
       }
       if (payload == '2') {
         $("#state").html("Keluar");     
-        indoor = 1;
         console.log('orang keluar');
       }
     }
