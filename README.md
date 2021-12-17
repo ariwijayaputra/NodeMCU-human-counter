@@ -17,10 +17,11 @@ via the PIR sensor on the exterior door and the inner door
 
 Name				 				  | Amount  | Detail
 ---------------------------- | ------- | ------
-NodeMCU Amica esp8266        | x2		|
+NodeMCU Amica esp8266        | x1		|
 LCD 16x2                     | x1      |
 LCD 16x2 I2C Module          | x1      |
 PIR sensor                   | x2		|
+RTC                          | x1      |
 Cabel Jumper                 | depends |
 
 # Schematic
