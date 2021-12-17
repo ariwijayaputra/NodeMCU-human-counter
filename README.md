@@ -18,8 +18,8 @@ via the PIR sensor on the exterior door and the inner door
 Name				 				  | Amount  | Detail
 ---------------------------- | ------- | ------
 NodeMCU Amica esp8266        | x2		|
-LCD 16x2                     | x1      |(for indoor h/w only, but indoor & outdoor lcd is recommended)
-LCD 16x2 I2C Module          | x1      |(amount depends on the lcd)
+LCD 16x2                     | x1      |
+LCD 16x2 I2C Module          | x1      |
 PIR sensor                   | x2		|
 Cabel Jumper                 | depends |
 
@@ -34,6 +34,8 @@ D7      |         | data |      |     |
 D6      |         |      | data |     |
 D1      | SCL     |      |      | SCL |
 D2      | SDA     |      |      | SDA |
+
+![image](https://user-images.githubusercontent.com/62342206/146539453-be7d5a5c-0650-4969-833f-1e4c8705ee06.png)
 
 # Folder Structure
 - maqiatto ==> folder for hardware code
@@ -53,16 +55,14 @@ D2      | SDA     |      |      | SDA |
 # Panduan instalasi
 1.  Rangkai komponen sesuai dengan skematik
 2.  Sesuaikan `Credential.h` agar sesuai dengan data pada broker MQTT
-3.  Sesuaikan `MQTTPublish` pada `pir.ino` agar sesuai dengan hardware. publish 1 untuk hardware indoor dan publish 2 untuk hardware outdoor
-4.  Upload file pada folder maqiatto ke nodemcu
-5.  sesuaikan data pada file web/js/config.js agar sesuai dengan data pada broker MQTT
-6.  jalankan file web/index.html untuk menguji.
+3.  Upload file pada folder maqiatto ke nodemcu
+4.  sesuaikan data pada file web/js/config.js agar sesuai dengan data pada broker MQTT
+5.  jalankan file web/index.html untuk menguji.
 
 # Installation Guide
 1. Assemble the components according to the schematic
 2. Adjust Credential.h to match the data on the MQTT broker
-3. Adjust MQTTPublish on pir.ino to match the hardware. publish 1 for indoor hardware and publish 2 for outdoor hardware
-4. Upload files in the maqiatto folder to nodemcu
-5. adjust the data in the web/js/config.js file to match the data in the MQTT broker
-6. run the web/index.html file to test.
+3. Upload files in the maqiatto folder to nodemcu
+4. adjust the data in the web/js/config.js file to match the data in the MQTT broker
+5. run the web/index.html file to test.
  
