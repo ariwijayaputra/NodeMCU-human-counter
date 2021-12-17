@@ -2,22 +2,25 @@ void pir() {
   sensorValue = digitalRead(pirSensor);
   if (sensorValue == HIGH)
   {
-    /*
-    CHANGE `MQTTPublish(TOPIC, "1");` to  `MQTTPublish(TOPIC, "2");` if you working
-    with outdoor nodeMCU
-    publish: 1 = indoor sensor detecting, 2 = outdoor sensor detecting motion
-    */     
-    MQTTPublish(TOPIC, "1");
-    Serial.println("motion detected");
-    
-    while(digitalRead(pirSensor)==HIGH){
-      delay(10);
-      //wait until sensor is in low state, otherwise it will publish multiple data to topic
+    //MQTTPublish(TOPIC, "1");
+    if (in == 0) {
+      Serial.println("motion 1 detected");
+      in = 1;
+      current = 1;
     }
     
   }
-  else{
-    Serial.println("no motion");
+}
+void pir2() {
+  sensorValue2 = digitalRead(pirSensor2);
+  if (sensorValue2 == HIGH)
+  {
+    //MQTTPublish(TOPIC, "1");
+    if (out == 0) {
+      Serial.println("motion 2 detected");
+      out = 1;
+      current = 2;
+    }
     
   }
 }
