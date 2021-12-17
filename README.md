@@ -25,14 +25,15 @@ Cabel Jumper                 | depends |
 
 # Schematic
 
-ESP8266 | LCD I2C | PIR  | 5v
-------- | ------- | ---- | ---
-vin     | vcc     |      | 5v
-gnd     | gnd     | gnd  |
-3.3v    |         | vcc  |
-D5      |         | data |
-D1      | SCL     |      |
-D2      | SDA     |      |
+ESP8266 | LCD I2C | PIR1 | PIR2 | RTC |
+------- | ------- | ---- | ---- | --- |
+vin     | vcc     | vcc  | vcc  |     |
+gnd     | gnd     | gnd  | gnd  | gnd |
+3.3v    |         |      |      | vcc |
+D7      |         | data |      |     |
+D6      |         |      | data |     |
+D1      | SCL     |      |      | SCL |
+D2      | SDA     |      |      | SDA |
 
 # Folder Structure
 - maqiatto ==> folder for hardware code
