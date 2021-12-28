@@ -1,11 +1,11 @@
-
 host = 'maqiatto.com';	// hostname or IP address
 port = 8883;
-topic = '';		// topic to subscribe to. main topic. 'example: aryanathaaa@gmail.com/status'
-STATUS = '';  // topic to subscribe to. status masuk keluar. 'example: aryanathaaa@gmail.com/status'
-jumlah = '';	// topic to subscribe to. jumlah orang. ex: 'aryanathaaa@gmail.com/jumlah'
+topic = 'aryanathaaa@gmail.com/status';		// topic to subscribe to.
+jumlah = 'aryanathaaa@gmail.com/jumlah';	// topic to subscribe to. jumlah orang
+waktu = 'aryanathaaa@gmail.com/waktu';
+tanggal = 'aryanathaaa@gmail.com/tanggal';
 useTLS = false;
-username = "";//maqiatto username ex: 'aryanathaaa@gmail.com/'
-password = "" ;//maqiatto password
+username = "aryanathaaa@gmail.com";//maqiatto username
+password = "Ariwijaya1" ;//maqiatto password
 
 cleansession = true;
