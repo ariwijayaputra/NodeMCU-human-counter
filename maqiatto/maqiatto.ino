@@ -6,6 +6,7 @@
 #include <Wire.h>
 #include <DS3231.h>
 
+//deklarasi objek & komponen
 RTClib RTC;
 DS3231 jam;
 LiquidCrystal_I2C lcd(0x27, 16, 2);
@@ -72,6 +73,7 @@ void setup()
   lcd.setCursor(0, 0);
   lcd.print("Preparing sensor");
   delay(4000);
+  //kedipkan lcd
   lcd.noBacklight();
   delay(300);
   lcd.backlight();
@@ -79,6 +81,7 @@ void setup()
   lcd.noBacklight();
   delay(300);
   lcd.backlight();
+  ////
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Sensor Ready");
@@ -100,9 +103,9 @@ void loop()
 
   MQTTLoop();
   
-  if (timerPir > 500) { // mengambil data sensor setiap 0.5 second
+  if (timerPir > 300) { // mengambil data sensor setiap 0.3 second
     pir();
-    delay(500);
+    delay(300);
     pir2();
     timerPir = 0; // reset timer untuk pengambilan data
   }
@@ -110,20 +113,20 @@ void loop()
     timeout = 0; // reset timeout
     timer = 1; // menyalakan timer
   }
-  if (timeout > 3000) {//jika nilai timeout (auto increment) lebih dari 4000,
+  if (timeout > 3000) {//jika nilai timeout (auto increment) lebih dari 3000,
     in = 0; //clear status, sensor tidak mendeteksi gerakan.
     out = 0;
     timer = 0;// matikan timer
     Serial.println("timeout");
   }
   if (in == 1 && out == 1) {
-    if (last == 2 && current == 1) {
+    if (last == 2 && current == 1) { //sensor pertama yang mendeteksi gerakan adalah sensor luar, dan sensor terakhir yang mendeteksi gerakan adl sensor dalam
       Serial.println("==== MASUK ======");
       data.jumlah++;
       
       lcd.clear();
     }
-    else if (last == 1 && current == 2) {
+    else if (last == 1 && current == 2) { //sensor pertama yang mendeteksi gerakan adl sensor dalam, dan sensor terakhir yang mendeteksi gerakan adl sensor luar
       Serial.println("==== KELUAR ======");
       data.jumlah--;
       if (data.jumlah < 0)
@@ -133,7 +136,7 @@ void loop()
       lcd.clear();
       
     }
-    delay(500);
+    delay(2500);
     EEPROM.put(addr, data);//replace data pada byte array cache, belum meyimpan ke hardware
     EEPROM.commit();// menyimpan data pada byte array cache ke hardware
     in = 0;
@@ -171,7 +174,7 @@ void loop()
 
     char tanggal[10] = "";
     sprintf(tanggal, "%d/%d/%d", jam.getDate(), jam.getMonth(century), jam.getYear());
-    MQTTPublish(TANGGAL, tanggal);
+    MQTTPublish(TANGGAL, tanggal); //mengirimkan data ke web
     
     char waktu[10] = "";
     sprintf(waktu, "%d:%d:%d", jam.getHour(h12Flag, pmFlag), jam.getMinute(), jam.getSecond());

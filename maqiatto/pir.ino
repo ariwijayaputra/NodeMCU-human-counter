@@ -8,7 +8,7 @@ void pir() {
       in = 1;
       current = 1;
     }
-    
+    sensorValue = LOW;
   }
 }
 void pir2() {
@@ -21,6 +21,6 @@ void pir2() {
       out = 1;
       current = 2;
     }
-    
+    sensorValue2 = LOW;
   }
 }
